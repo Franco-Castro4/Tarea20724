@@ -21,4 +21,11 @@ class usuarioController extends Controller
         }
         return response()->json(["error mesage" => "No se pudo crear el usuario, revise posibles errores"]);
     }
+
+    public function Eliminar(Request $request, $id)
+    {
+        $usuario = usuariomodel::findOrFail($id);
+        $usuario->delete();
+        return ['mensaje' => 'usuario eliminado'];
+    }
 }

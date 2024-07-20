@@ -43,4 +43,9 @@ class usuarioController extends Controller
     {
         return usuariomodel::all();
     }
+
+    public function BuscarUnId(Request $request, $id)
+    {
+        return usuariomodel::findOrFail($id);
+    }
 }

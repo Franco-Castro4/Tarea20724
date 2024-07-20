@@ -28,4 +28,14 @@ class usuarioController extends Controller
         $usuario->delete();
         return ['mensaje' => 'usuario eliminado'];
     }
+
+    public function Modificar(Request $request, $id)
+    {
+        $usuario = usuariomodel::findOrFail($id);
+        $usuario->nombre = $request->post("nombre");
+        $usuario->apellido = $request->post("apellido");
+        $usuario->telefono = $request->post("telefono");
+        $usuario->save();
+        return $usuario;
+    }
 }

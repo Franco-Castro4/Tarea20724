@@ -6,3 +6,4 @@ use App\Http\Controllers\usuarioController;
 
 Route::post('/usuario', [usuarioController::class, 'Crear']);
 Route::delete('/usuario/{d}', [usuarioController::class, 'Eliminar']);
+Route::put('/usuario/{d}', [usuarioController::class, 'Modificar']);

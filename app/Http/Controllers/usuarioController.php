@@ -38,4 +38,9 @@ class usuarioController extends Controller
         $usuario->save();
         return $usuario;
     }
+
+    public function ListarTodos(Request $request)
+    {
+        return usuariomodel::all();
+    }
 }

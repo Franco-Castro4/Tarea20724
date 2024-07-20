@@ -9,7 +9,7 @@ class usuarioController extends Controller
 {
     public function Crear(Request $request)
     {
-        if ($request->has("contenido") && $request->has("usuario")) {
+        if ($request->has("nombre") && $request->has("apellido")) {
 
 
             $usuario = new usuariomodel();

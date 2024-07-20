@@ -117,4 +117,22 @@ class usuarioTest extends TestCase
             'deleted_at' => null
         ]);
     }
+
+    public function test_ModificarUsuarioQueNoExiste()
+    {
+        $response = $this->put('/api/usuario/99999');
+        $response->assertStatus(404);
+    }
+
+    public function test_BuscarUnUsuarioQueNoExiste()
+    {
+        $response = $this->get('/api/usuario/99999');
+        $response->assertStatus(404);
+    }
+
+    public function test_EliminarUsuarioQueNoExiste()
+    {
+        $response = $this->delete('/api/usuario/99999');
+        $response->assertStatus(404);
+    }
 }
